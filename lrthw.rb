@@ -24,7 +24,7 @@ print "How much do you weigh?"
 weight = gets.chomp
 
 puts "So, you're #{age} years old, #{height} tall and #{weight} heavy."
-=end
+
 
 #Exercise 12
 
@@ -38,4 +38,39 @@ open("http://www.ruby-lang.org/en") do |f|
      puts f.content_encoding # []
      puts f.last_modified # Thu Dec  05  02:245:02 UTC 2002
 end
- 
+
+
+#Exercise 13
+
+first, second, third = ARGV
+
+puts "The script is called: #{$0}"
+puts "Your first variable is: #{first}"
+puts "Your second variable is: #{second}"
+puts "Your third variable is: #{third}"
+
+
+age = ARGV
+
+puts "The script is called: #{$0}"
+puts "Your first variable is: #{age}"
+
+
+=end
+
+
+
+city, state, zipcode, country, phone = ARGV
+
+
+puts "The script is called: #{$0}"
+puts "Your first variable is: #{city}"
+puts "Your second variable is: #{state}"
+puts "Your third variable is: #{zipcode}"
+puts "Your fourth variable is: #{country}"
+
+puts "What's your phone number?"
+phone = STDIN.gets.chomp
+
+puts "Your fifth variable is: #{phone}"
+
