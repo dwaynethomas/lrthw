@@ -118,27 +118,33 @@ file_again = STDIN.gets.chomp()
 txt_again = File.open(file_again)
 
 puts txt_again.read()
-=end
+
 
 #Exercise 16
-
+#the filename is an argument when this script is first run.
 filename = ARGV.first
 script = $0
 
+ #human-readable warnings and escape directions are given to the customer.
 puts "We're going to erase #{filename}."
 puts "If you don't want that, hit CTRL-C (^C)."
 puts "If you do want that, hit RETURN."
 
+ #prompt to customer to decide what they will do with the file
 print "?"
 STDIN.gets
 
+ #Explains the first step of opening the file. Opens the file by giving File.open arguments. Once the file is opened in the writing state, it is assigned to the variable target.#
+ 
 puts "Opening the file..."
 target = File.open(filename, 'w')
 
+ #Explains that the file is being erased. The file opened in its writing state is measured first then erased.#
 puts "Truncating the file. Goodbye!"
 target.truncate(target.size)
 
-
+#Takes three lines from the customer.#  
+ 
 puts "Now I'm going to ask you for three lines."
 
 print "line 1: "; line1 = STDIN.gets.chomp()
@@ -146,7 +152,8 @@ print "line 2: "; line2 = STDIN.gets.chomp()
 print "line 3: "; line3 = STDIN.gets.chomp()
 
 puts "I'm going to write these to the file."
-
+ 
+ #Writes them to file opened in its writing state#
 target.write(line1)
 target.write("\n")
 target.write(line2)
@@ -157,4 +164,70 @@ target.write("\n")
 puts "And finally, we close it."
 target.close()
 
+=end
 
+
+#Exercise 17: More files
+
+from_file, to_file=ARGV
+script = $0
+
+puts "Copying from #{from_file} to #{to_file}"
+
+#We could do these two on one line too, how?
+input = File.open(from_file)
+indata = input.read()
+
+
+puts "The input file is #{indata.length} bytes long"
+
+puts "Does the output file exist? #{File.exists? to_file}"
+puts "Ready, hit RETURN to continue, CTRL-C to abort."
+
+STDIN.gets
+
+output = File.open(to_file, 'w')
+output.write(indata)
+
+puts "Alright, all done."
+
+output.close()
+input.close()
+
+=begin
+ Exercise 18: Names, Variables, Code, Functions
+ Exercise 19: Functions And Variables
+ Exercise 20: Functions And Files
+ Exercise 21: Functions Can Return Something
+ Exercise 22: What Do You Know So Far?
+ Exercise 23: Read Some Code
+ Exercise 24: More Practice
+ Exercise 25: Even More Practice
+ Exercise 26: Congratulations, Take A Test!
+ Exercise 27: Memorizing Logic
+ Exercise 28: Boolean Practice
+ Exercise 29: What If
+ Exercise 30: Else And If
+ Exercise 31: Making Decisions
+ Exercise 32: Loops And Arrays
+ Exercise 33: While Loops
+ Exercise 34: Accessing Elements Of Arrays
+ Exercise 35: Branches and Functions
+ Exercise 36: Designing and Debugging
+ Exercise 37: Symbol Review
+ Exercise 38: Doing Things To Lists
+ Exercise 39: Hashes, Oh Lovely Hashes
+ Exercise 40: Modules, Classes, And Objects
+ Exercise 41: Learning To Speak Object Oriented
+ Exercise 42: Is-A, Has-A, Objects, and Classes
+ Exercise 43: Gothons From Planet Percal #25
+ Exercise 44: Inheritance Vs. Composition
+ Exercise 45: You Make A Game
+ Exercise 46: A Project Skeleton
+ Exercise 47: Automated Testing
+ Exercise 48: Advanced User Input
+ Exercise 49: Making Sentences
+ Exercise 50: Your First Website
+ Exercise 51: Getting Input From A Browser
+ Exercise 52: The Start Of Your Web Game
+=end
