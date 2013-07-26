@@ -193,7 +193,7 @@ puts "Alright, all done."
 
 output.close()
 input.close()
-=end
+
 
 #Exercise 18: Names, Variables, Code, Functions
 
@@ -224,9 +224,79 @@ puts_one("First!")
 puts_none()
 
 
+
+#Exercise 19: Functions And Variables
+def cheese_and_crackers(cheese_count, boxes_of_crackers)
+    puts "You have #{cheese_count} cheeses!"
+    puts "You have #{boxes_of_crackers} boxes of crackers!"
+    puts "Man that's enough for a party!"
+    puts "Get a blanket."
+    puts # a blank line
+end
+
+puts "We can just give the function numbers directly:"
+cheese_and_crackers(20, 30)
+
+puts "OR, we can use variables from our script:"
+amount_of_cheese = 10
+amount_of_crackers = 50
+cheese_and_crackers(amount_of_cheese, amount_of_crackers)
+
+puts "We can even do math inside too:"
+cheese_and_crackers(10 + 20, 5 + 6)
+
+puts "And we can combine the two, variables and math:"
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+=end
+
+ 
+ #Exercise 20: Functions And Files
+input_file = ARGV[0]
+
+#methods define actions to follow#
+#Method prints all the contents of the file using the read method.#
+def print_all(f)
+    puts f.read()
+end
+#Method returns the file to its beginning with ths seek method."#
+def rewind(f)
+    f.seek(0, IO::SEEK_SET)
+end
+
+#Method prints the specified amounts of lines using the readline method."
+def print_a_line(line_count, f)
+    puts "#{line_count} #{f.readline()}"
+end
+
+current_file = File.open(input_file)
+
+puts "First let's print the whole file:"
+puts "\n" # a blank line
+
+print_all(current_file)
+
+puts "\n" # a blank line
+puts "Now let's rewind, kind of like a tape."
+
+
+rewind(current_file)
+
+puts "Let's print three lines:"
+puts "\n" # a blank line
+
+#This code prints each increment of lines in the file."
+current_line = 1
+print_a_line(current_line, current_file)
+
+current_line += 1
+print_a_line(current_line, current_file)
+
+current_line += 1
+print_a_line(current_line, current_file)
+
+
 =begin
- Exercise 19: Functions And Variables
- Exercise 20: Functions And Files
+ 
  Exercise 21: Functions Can Return Something
  Exercise 22: What Do You Know So Far?
  Exercise 23: Read Some Code
