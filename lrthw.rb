@@ -247,7 +247,6 @@ cheese_and_crackers(10 + 20, 5 + 6)
 
 puts "And we can combine the two, variables and math:"
 cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
-=end
 
  
  #Exercise 20: Functions And Files
@@ -293,11 +292,50 @@ print_a_line(current_line, current_file)
 
 current_line += 1
 print_a_line(current_line, current_file)
+=end
 
+
+ 
+#Exercise 21: Functions Can Return Something
+
+def add(a, b)
+    puts "ADDING #{a} +#{b}"
+    a + b
+end
+
+def subtract(a, b)
+    puts "SUBTRACTING #{a} - #{b}"
+    a - b
+end
+
+def multiply(a, b)
+    puts "MULTIPLYING #{a} * #{b}"
+    a * b
+end
+
+def divide(a, b)
+    puts "DIVIDING #{a} / #{b}"
+    a/b
+end
+
+puts "Let's do some math with just functions!"
+
+age = add(30, 5)
+height = subtract(78, 4)
+weight = multiply(90, 2)
+iq = divide(100, 2)
+
+puts "Age: #{age}, Height: #{height}, Weight: #{weight}, IQ: #{iq}"
+
+# A puzzle for the extra  credit, type it in anyway.
+
+puts "Here is a puzzle."
+
+what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
+
+puts "That becomes: #{what}.\nCan you do it by hand?"
 
 =begin
- 
- Exercise 21: Functions Can Return Something
  Exercise 22: What Do You Know So Far?
  Exercise 23: Read Some Code
  Exercise 24: More Practice
