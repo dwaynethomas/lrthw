@@ -292,7 +292,6 @@ print_a_line(current_line, current_file)
 
 current_line += 1
 print_a_line(current_line, current_file)
-=end
 
 
  
@@ -334,9 +333,79 @@ puts "Here is a puzzle."
 what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
 
 puts "That becomes: #{what}.\nCan you do it by hand?"
+=end
 
+
+ <<EXERCISE_22 What Do You Know So Far?
+symbols, their names, and what they do from memory.
+    Exercise1:
+    Ruby installation
+    Exercise 2:
+    puts. prints a line of string, without a return character.
+    #. creates comments in the code so humans can read them later.
+    Exercise 3:
+    Math operations
+    + plus. adds
+    - minus. subtracts
+    / slash. divides and will give whole number quotient unless specified with the floating type
+    ** asterisk. exponents.
+    *multiplication.
+    % percent. modulo, gives the remainder after a division.
+    < less-than. comparison operator returns true if the left side is smaller than the right side
+    > greater-than. comparison operator returns true if the right side is bigger than the left side
+    <= less-than-equal. comparison operator returns true if the left side is smaller or bigger than the right side
+    >= greater-than-equal. comparison operator returns true if the right side is bigger or smaller than the left side
+    Exercise 4: Variables And Names
+    avariable=3 , #{avariable} convenient way to call a variable after assignment: also called using the pound and curly brace.
+    _ in space_in_a_car is called an underscore character. We use this character a lot to put an imaginary space between words in variable names.
+    Exercise 5:
+    single quotes: ' Zed A. Shaw' are one way to represent string text
+    my_name = 'Zed A. Shaw'
+    puts "Let's talk about %s." % my_name
+    " %s " a variable. is a second way to represent string text
+    puts "He's got %s eyes and %s hair." % [my_eyes, my_hair]
+    This way inserts two strings, from the array into the sentence.
+    my_weight = 180
+    puts "He's %d pounds heavy." % my_weight
+    This way inserts a number into the sentence.
+    Exercise 6: Strings And Text
+    None.
+    Exercise 7: More Printing
+    end1 = "C"
+    end2 = "h"
+    print end1 + end2 => Ch
+    displays string without a return line
+    Exercise 8: Printing, Printing
+    formatter = "%s %s %s %s"
+    puts formatter % ["one", "two", "three", "four"] => one two three four
+    displays string instructed by the variable
+    Exercise 9: Printing, Printing, Printing
+    puts <<PARAGRAPH
+    There's something going on here.
+    We'll be able to type as much as we like.
+    PARAGRAPH
+    => There's something go on here.
+    We'll be able to type as much as we like.
+    Displays a multiply line string using append characters <<
+    
+    Exercise 10: What Was That?
+    "I am 6'2\" tall."  # escape double-quote inside string
+    'I am 6\'2" tall.'  # escape single-quote inside string
+    escape sequences for single quote.
+    
+    
+    Exercise 11:
+    \ escape character. allows interpreter to interpret use of special symbols
+    t creates tab in the text.
+    \ creates a backslash in the text.
+    n splits text on a line.
+    << creates paragraphed text.
+    gets get string. grabs string from standard input/human customer
+    chomp. removes return character from grabbed string.
+    = performs an assignment to a variable
+    #{} enables textual use of a variable
+EXERCISE_22
 =begin
- Exercise 22: What Do You Know So Far?
  Exercise 23: Read Some Code
  Exercise 24: More Practice
  Exercise 25: Even More Practice
